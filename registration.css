@@ -1,0 +1,237 @@
+/* ===== Paper & Petals - Registration page ===== */
+
+:root {
+  --blush: #F8E1E7;
+  --rose: #E8A0B4;
+  --mauve: #B5546F;
+  --cream: #FFF9F5;
+  --ink: #2E2A2B;
+  --gold: #C9A66B;
+  --white: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--white);
+  color: var(--ink);
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; }
+a { color: var(--mauve); }
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+h1 { font-size: 64px; }
+h2 { font-size: 38px; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.eyebrow {
+  color: var(--mauve);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+}
+
+/* ----- Header ----- */
+.site-header { border-bottom: 1px solid var(--blush); }
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-icon { color: var(--mauve); }
+.main-nav { display: flex; gap: 28px; }
+.main-nav a { text-decoration: none; font-size: 15px; color: var(--ink); }
+.main-nav a:hover { color: var(--mauve); }
+.main-nav a.active { color: var(--mauve); font-weight: 700; }
+
+/* ----- Page heading ----- */
+.page-head { padding: 56px 0 40px; }
+.page-head .lead { font-size: 18px; margin: 0; }
+
+/* ----- Two column layout ----- */
+.register-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 64px;
+  align-items: start;
+  padding-bottom: 80px;
+}
+
+/* ----- Left side ----- */
+.register-side img {
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 32px;
+}
+.register-side h2 { font-size: 34px; }
+.benefits { list-style: none; margin: 0; padding: 0; }
+.benefits li { display: flex; gap: 16px; margin-bottom: 20px; }
+.benefit-icon { color: var(--gold); font-size: 22px; line-height: 1.3; }
+.benefits h3 { font-family: "Lato", sans-serif; font-size: 15px; font-weight: 700; margin: 0 0 2px; }
+.benefits p { margin: 0; font-size: 15px; }
+.side-note {
+  margin: 28px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--blush);
+  font-size: 15px;
+}
+
+/* ----- Form card ----- */
+.form-card {
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 40px rgba(181, 84, 111, 0.12);
+}
+.form-card h2 { font-size: 36px; }
+.form-intro { margin: 0 0 28px; font-size: 15px; }
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { margin-bottom: 22px; }
+label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  height: 56px;
+  padding: 0 18px;
+  border: 1px solid var(--rose);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  background-color: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input::placeholder { color: #7a7274; }
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--mauve);
+  box-shadow: 0 0 0 3px rgba(232, 160, 180, 0.4);
+}
+/* show red border only after the user has typed something wrong */
+input:not(:placeholder-shown):invalid { border-color: #c0392b; }
+input:not(:placeholder-shown):valid { border-color: #4f9a6b; }
+
+.hint { font-size: 14px; margin: 8px 0 0; font-weight: 400; }
+
+/* ----- Interests chips ----- */
+.interests {
+  border: none;
+  border-top: 1px solid var(--blush);
+  border-bottom: 1px solid var(--gold);
+  margin: 28px 0;
+  padding: 24px 0;
+}
+.interests legend { font-weight: 700; font-size: 15px; padding: 0; float: left; width: 100%; margin-bottom: 8px; }
+.interests .hint { clear: both; margin: 0 0 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { margin: 0; font-weight: 400; position: relative; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; width: 0; height: 0; }
+.chip span {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background-color: var(--cream);
+  font-size: 15px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.chip:hover span { background-color: var(--blush); }
+.chip input:checked + span {
+  background-color: var(--blush);
+  border-color: var(--mauve);
+}
+.chip input:checked + span::before { content: "✓ "; color: var(--mauve); }
+.chip input:focus-visible + span { outline: 3px solid var(--rose); outline-offset: 2px; }
+
+/* ----- Checkboxes ----- */
+.checks { margin-bottom: 24px; }
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.check input {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--mauve);
+}
+
+/* ----- Button & notes ----- */
+.btn {
+  display: block;
+  width: 100%;
+  background-color: var(--mauve);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn:hover { background-color: #9a4259; }
+
+.privacy-note { font-size: 14px; margin: 24px 0 12px; }
+.signin { text-align: center; margin: 0; font-size: 15px; }
+.signin a { font-weight: 700; }
+
+/* ----- Footer ----- */
+.site-footer { background-color: var(--blush); border-top: 1px solid var(--gold); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 13px;
+}
+.footer-bottom a { margin-left: 16px; color: var(--ink); text-decoration: none; }
+.footer-bottom a:hover { color: var(--mauve); }
+
+
