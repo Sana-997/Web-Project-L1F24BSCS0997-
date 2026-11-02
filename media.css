@@ -1,0 +1,236 @@
+/* ===== Paper & Petals - Media Information page ===== */
+
+:root {
+  --blush: #F8E1E7;
+  --rose: #E8A0B4;
+  --mauve: #B5546F;
+  --cream: #FFF9F5;
+  --ink: #2E2A2B;
+  --gold: #C9A66B;
+  --white: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+h1 { font-size: 60px; }
+h2 { font-size: 38px; }
+h3 { font-size: 22px; margin-bottom: 8px; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.eyebrow {
+  color: var(--mauve);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.lead { font-size: 17px; max-width: 480px; }
+.small-note { font-size: 14px; margin-top: 20px; }
+.section-sub { margin: 0 0 40px; max-width: 760px; }
+
+/* ----- Buttons & links ----- */
+.btn {
+  display: inline-block;
+  background-color: var(--mauve);
+  color: var(--white);
+  padding: 14px 28px;
+  border: 1px solid var(--mauve);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn:hover { background-color: #9a4259; border-color: #9a4259; }
+.btn-small { padding: 10px 20px; font-size: 14px; }
+.btn-outline { background-color: transparent; color: var(--mauve); }
+.btn-outline:hover { background-color: var(--blush); color: var(--mauve); border-color: var(--mauve); }
+
+.text-link { color: var(--mauve); font-weight: 700; text-decoration: none; }
+.text-link:hover { text-decoration: underline; }
+
+a:focus-visible, .btn:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+}
+
+/* ----- Header ----- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--cream);
+  border-bottom: 1px solid var(--blush);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  text-decoration: none;
+}
+.logo-icon { color: var(--mauve); }
+.main-nav { display: flex; align-items: center; gap: 28px; }
+.main-nav a { text-decoration: none; font-size: 15px; }
+.main-nav a:not(.btn):hover { color: var(--mauve); }
+.main-nav a.active { color: var(--mauve); font-weight: 700; }
+
+/* ----- Hero ----- */
+.media-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 72px;
+}
+.media-hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(181, 84, 111, 0.15);
+}
+
+/* ----- At a glance ----- */
+.glance {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 64px;
+  padding-top: 56px;
+  padding-bottom: 72px;
+  border-top: 1px solid var(--blush);
+}
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; padding: 0; }
+.tags li {
+  background-color: var(--blush);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 14px;
+}
+
+/* ----- Press shelf ----- */
+.shelf { padding-bottom: 72px; }
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.shelf-item { display: flex; flex-direction: column; align-items: flex-start; }
+.shelf-item p { margin: 0 0 16px; font-size: 15px; }
+.shelf-item .eyebrow { font-size: 11px; margin: 16px 0 6px; }
+.shelf-item .btn { margin-top: auto; }
+
+.shelf-preview {
+  width: 100%;
+  height: 190px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.brand-notes, .logo-preview {
+  background-color: var(--cream);
+  border: 1px solid var(--blush);
+  padding: 24px;
+}
+.preview-title { font-family: "Playfair Display", serif; font-size: 20px; line-height: 1.3; margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid var(--blush); }
+.swatches { display: flex; gap: 8px; }
+.swatches span { width: 28px; height: 28px; border-radius: 8px; }
+.swatches span:nth-child(1) { background-color: #F8E1E7; }
+.swatches span:nth-child(2) { background-color: #E8A0B4; }
+.swatches span:nth-child(3) { background-color: #B5546F; }
+.swatches span:nth-child(4) { background-color: #C9A66B; }
+.swatches span:nth-child(5) { background-color: #2E2A2B; }
+
+.logo-preview { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.logo-preview p { margin: 0; }
+.big-icon { color: var(--gold); font-size: 30px; line-height: 1; }
+.preview-logo { font-family: "Playfair Display", serif; font-size: 22px; margin: 6px 0 8px; }
+
+/* ----- Gallery ----- */
+.gallery { padding-bottom: 72px; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.gallery figure { margin: 0; }
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 14px;
+}
+.gallery figcaption p { margin: 0; font-size: 14px; }
+
+/* ----- Contact band ----- */
+.contact-band { background-color: var(--blush); padding: 72px 0; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+.notes { margin: 0 0 16px; padding-left: 20px; font-size: 14px; }
+.notes li { margin-bottom: 12px; padding-left: 6px; }
+.notes li::marker { color: var(--mauve); font-weight: 700; }
+
+/* ----- Footer ----- */
+.site-footer {
+  background-color: var(--blush);
+  border-top: 1px solid var(--gold);
+  padding-top: 56px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 48px;
+}
+.site-footer h4 { font-size: 15px; margin: 0 0 12px; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.site-footer li { margin-bottom: 8px; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--mauve); }
+.socials a { margin-right: 14px; font-size: 14px; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 24px;
+  border-top: 1px solid var(--gold);
+  font-size: 13px;
+}
+.footer-bottom a { margin-left: 16px; }
+
+
